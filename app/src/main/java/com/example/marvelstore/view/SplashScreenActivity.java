@@ -8,19 +8,18 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.marvelstore.R;
+import com.example.marvelstore.controller.SplashScreenController;
 
 public class SplashScreenActivity extends AppCompatActivity {
+    SplashScreenController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        Handler handle = new Handler();
-        handle.postDelayed(new Runnable() {
-            @Override public void run() {
-                goToHome();
-            }
-        }, 2000);
+        //Handler handle = new Handler();
+        controller = new SplashScreenController();
+
     }
 
 

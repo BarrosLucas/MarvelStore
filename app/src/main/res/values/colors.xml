@@ -4,11 +4,14 @@
     <color name="backgroundColor">#46413d</color>
     <color name="backgroundButtonsColors">#dddddd</color>
     <color name="selectColorButton">#666666</color>
-    <color name="titleComicColor">#ffffff</color>
+    <color name="titleComicColor">#000000</color>
     <color name="subtitleComicColor">#000000</color>
 
 
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <!--<color name="colorPrimary">#6200EE</color>-->
+    <color name="colorPrimary">#222222</color>
+    <!--<color name="colorPrimaryDark">#3700B3</color>-->
+    <color name="colorPrimaryDark">#333333</color>
+    <!--<color name="colorAccent">#03DAC5</color>-->
+    <color name="colorAccent">#ffffff</color>
 </resources>

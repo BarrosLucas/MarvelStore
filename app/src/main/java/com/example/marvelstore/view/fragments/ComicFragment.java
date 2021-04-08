@@ -1,4 +1,4 @@
-package com.example.marvelstore;
+package com.example.marvelstore.view.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,11 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.marvelstore.view.adapters.ComicRecyclerViewAdapter;
 import com.example.marvelstore.R;
-import com.example.marvelstore.model.Comic;
 import com.example.marvelstore.view.HomeActivity;
-
-import java.util.List;
 
 /**
  * A fragment representing a list of Items.
@@ -26,11 +24,9 @@ public class ComicFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    private static final String ARG_COMICS_LIST = "comics";
+
     // TODO: Customize parameters
     private int mColumnCount = 3;
-
-    private List<Comic> comics;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -54,8 +50,8 @@ public class ComicFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
+            Log.i("VEIO?","Uai");
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
-            //comics = (List<Comic>) getArguments().get(ARG_COLUMN_COUNT);
         }
     }
 
@@ -67,14 +63,16 @@ public class ComicFragment extends Fragment {
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
+            HomeActivity.recyclerView = (RecyclerView) view;
             if (mColumnCount <= 1) {
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                HomeActivity.recyclerView.setLayoutManager(new LinearLayoutManager(context));
             } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+                HomeActivity.recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyComicRecyclerViewAdapter(HomeActivity.returnBody.getData().getResults()));
+            HomeActivity.recyclerView.setAdapter(new ComicRecyclerViewAdapter(HomeActivity.returnBody.getData().getResults()));
         }
         return view;
     }
+
+
 }

@@ -1,4 +1,4 @@
-package com.example.marvelstore;
+package com.example.marvelstore.view.adapters;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -8,8 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.marvelstore.R;
+import com.example.marvelstore.controller.ComicAdapterController;
 import com.example.marvelstore.model.Comic;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -17,11 +18,12 @@ import java.util.List;
  *
  * TODO: Replace the implementation with code for your data type.
  */
-public class MyComicRecyclerViewAdapter extends RecyclerView.Adapter<MyComicRecyclerViewAdapter.ViewHolder> {
+public class ComicRecyclerViewAdapter extends RecyclerView.Adapter<ComicRecyclerViewAdapter.ViewHolder> {
 
     private final List<Comic> mValues;
+    private ComicAdapterController controller;
 
-    public MyComicRecyclerViewAdapter(List<Comic> items) {
+    public ComicRecyclerViewAdapter(List<Comic> items) {
         mValues = items;
     }
 
@@ -29,16 +31,14 @@ public class MyComicRecyclerViewAdapter extends RecyclerView.Adapter<MyComicRecy
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_item_comic, parent, false);
+        controller = new ComicAdapterController();
+
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.mItem = mValues.get(position);
-
-        Picasso.get().load(mValues.get(position).getThumbnail().getPath()+"portrait_medium."+mValues.get(position).getThumbnail().getExtension()).into(holder.picture);
-        holder.title.setText(mValues.get(position).getTitle());
-        holder.price.setText(mValues.get(position).getPrices().get(0).getPrice()+"");
+        controller.loadiItem(mValues,holder,position);
     }
 
     @Override
@@ -47,6 +47,7 @@ public class MyComicRecyclerViewAdapter extends RecyclerView.Adapter<MyComicRecy
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         public final View mView;
         public final ImageView picture;
         public final TextView title;

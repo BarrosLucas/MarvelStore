@@ -9,5 +9,5 @@
     android:layout_marginLeft="@dimen/margin"
     android:layout_marginRight="@dimen/margin"
     app:layoutManager="LinearLayoutManager"
-    tools:context="com.example.marvelstore.ComicFragment"
+    tools:context="com.example.marvelstore.view.fragments.ComicFragment"
     tools:listitem="@layout/fragment_item_comic" />

@@ -5,6 +5,9 @@
     <dimen name="text_margin">16dp</dimen>
     <dimen name="margin">16dp</dimen>
 
-    <dimen name="titleComicItemList">40sp</dimen>
-    <dimen name="subtitleComicItemList">30sp</dimen>
+    <dimen name="widthThumb">90dp</dimen>
+    <dimen name="heightThumb">150dp</dimen>
+
+    <dimen name="titleComicItemList">20sp</dimen>
+    <dimen name="subtitleComicItemList">18sp</dimen>
 </resources>

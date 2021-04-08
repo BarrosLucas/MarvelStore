@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="marvelColor">#c81d26</color>
+    <color name="backgroundColor">#46413d</color>
+    <color name="backgroundButtonsColors">#dddddd</color>
+    <color name="selectColorButton">#666666</color>
+    <color name="titleComicColor">#ffffff</color>
+    <color name="subtitleComicColor">#000000</color>
 
 
     <color name="colorPrimary">#6200EE</color>

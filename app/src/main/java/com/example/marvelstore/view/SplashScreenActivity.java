@@ -18,7 +18,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         //Handler handle = new Handler();
-        controller = new SplashScreenController();
+        controller = new SplashScreenController(this,this);
 
     }
 

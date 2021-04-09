@@ -64,8 +64,13 @@ public class ComicActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.cart:
-                Intent intent = new Intent(this,CartActivity.class);
-                startActivity(intent);
+                if(HomeActivity.comics.size()>0){
+                    Intent intent = new Intent(this,CartActivity.class);
+                    startActivity(intent);
+                }else{
+                    //Avisar que não tem nada no carrinho
+                }
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

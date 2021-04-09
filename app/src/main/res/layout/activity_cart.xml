@@ -17,130 +17,135 @@
                 android:layout_height="0dp"
                 android:layout_weight="2"
                 tools:listitem="@layout/list_item_cart" />
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:orientation="vertical"
                 android:layout_weight="3">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Cupom de Desconto"
-                    android:textSize="@dimen/titlesCart"
-                    android:fontFamily="sans-serif-condensed-light"
-                    android:textColor="@color/titlesCart"/>
-
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-                    <LinearLayout
-                        android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+                    <TextView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="@string/discountCoupon"
+                        android:textSize="@dimen/titlesCart"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:textColor="@color/titlesCart"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin"
                         android:gravity="center"
-                        android:background="@color/titleDescriptionColor"
-                        android:layout_marginRight="@dimen/margin"
-                        android:layout_weight="2">
-                        <EditText
-                            android:id="@+id/edit"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:layout_width="match_parent"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            />
+                            android:gravity="center"
+                            android:background="@color/titleDescriptionColor"
+                            android:layout_marginRight="@dimen/margin"
+                            android:layout_weight="2">
+                            <EditText
+                                android:id="@+id/edit"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                />
+                        </LinearLayout>
+                        <Button
+                            android:id="@+id/apply"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/apply"/>
                     </LinearLayout>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total"
+                        android:textSize="@dimen/titlesCart"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:textColor="@color/titlesCart"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/total_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="USD 0,00"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/totalCart"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginVertical="@dimen/totalMargin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/remove_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="- USD 0,00"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/totalCart"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginVertical="@dimen/totalMargin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="USD 0,00"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/totalCart"/>
+                    </LinearLayout>
+
                     <Button
-                        android:id="@+id/apply"
-                        android:layout_width="0dp"
+                        android:id="@+id/back"
+                        android:layout_marginTop="@dimen/margin"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Aplicar"/>
-                </LinearLayout>
-
-                <TextView
-                    android:layout_marginTop="@dimen/margin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Total"
-                    android:textSize="@dimen/titlesCart"
-                    android:fontFamily="sans-serif-condensed-light"
-                    android:textColor="@color/titlesCart"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <LinearLayout
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"/>
-                    <TextView
-                        android:id="@+id/total_price"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="USD 0,00"
+                        android:background="@color/buttonCart"
+                        android:text="@string/keepbuying"
                         android:textStyle="bold"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="@dimen/totalCart"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_marginVertical="@dimen/totalMargin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <LinearLayout
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"/>
-                    <TextView
-                        android:id="@+id/remove_price"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="- USD 0,00"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="@dimen/totalCart"/>
-                </LinearLayout>
+                        android:fontFamily="sans-serif-condensed"
+                        android:textColor="@color/colorAccent"/>
 
-                <LinearLayout
-                    android:layout_marginVertical="@dimen/totalMargin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <LinearLayout
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"/>
-                    <TextView
-                        android:id="@+id/price"
-                        android:layout_width="wrap_content"
+                    <Button
+                        android:id="@+id/finish"
+                        android:layout_marginTop="@dimen/margin"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="USD 0,00"
+                        android:background="@color/buttonCart"
+                        android:text="@string/finish"
                         android:textStyle="bold"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="@dimen/totalCart"/>
+                        android:fontFamily="sans-serif-condensed"
+                        android:textColor="@color/colorAccent"/>
                 </LinearLayout>
-
-                <Button
-                    android:id="@+id/back"
-                    android:layout_marginTop="@dimen/margin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/buttonCart"
-                    android:text="Continuar comprando"
-                    android:textStyle="bold"
-                    android:fontFamily="sans-serif-condensed"
-                    android:textColor="@color/colorAccent"/>
-
-                <Button
-                    android:id="@+id/finish"
-                    android:layout_marginTop="@dimen/margin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/buttonCart"
-                    android:text="FINALIZAR"
-                    android:textStyle="bold"
-                    android:fontFamily="sans-serif-condensed"
-                    android:textColor="@color/colorAccent"/>
-            </LinearLayout>
+            </ScrollView>
 
         </LinearLayout>
 

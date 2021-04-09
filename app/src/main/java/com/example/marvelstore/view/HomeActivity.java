@@ -47,6 +47,8 @@ public class HomeActivity extends AppCompatActivity {
 
     public static ArrayList<ComicToCart> comics;
 
+    public static String coupon;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

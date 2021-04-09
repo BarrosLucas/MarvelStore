@@ -3,9 +3,12 @@ package com.example.marvelstore.controller;
 import android.util.Log;
 import android.view.View;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.marvelstore.model.ComicToCart;
 import com.example.marvelstore.utils.DownloadImage;
 import com.example.marvelstore.utils.Pratice;
+import com.example.marvelstore.view.CartActivity;
 import com.example.marvelstore.view.HomeActivity;
 import com.example.marvelstore.view.adapters.CartItemViewAdapter;
 
@@ -13,7 +16,7 @@ import java.util.List;
 
 public class CartAdapterController {
     CartItemViewAdapter.ViewHolder holder;
-    public void loadiItem(final CartItemViewAdapter.ViewHolder h, int position,CartController cartController, List<ComicToCart> comics){
+    public void loadiItem(final CartItemViewAdapter.ViewHolder h, int position, CartController cartController, List<ComicToCart> comics){
         holder = h;
 
         holder.mItem = comics.get(position);
@@ -37,6 +40,13 @@ public class CartAdapterController {
             @Override
             public void onClick(View view) {
                 setAmount(holder.mItem.getAmount()+1,position,cartController);
+            }
+        });
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HomeActivity.comics.remove(getIndex(holder.mItem.getCode()));
+                cartController.refreshRecycle();
             }
         });
     }

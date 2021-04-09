@@ -1,5 +1,6 @@
 package com.example.marvelstore.view.adapters;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -52,6 +53,7 @@ public class ComicRecyclerViewAdapter extends RecyclerView.Adapter<ComicRecycler
         public final ImageView picture;
         public final TextView title;
         public final TextView price;
+        public final CardView cardView;
 
         public Comic mItem;
 
@@ -62,7 +64,7 @@ public class ComicRecyclerViewAdapter extends RecyclerView.Adapter<ComicRecycler
             picture = (ImageView) view.findViewById(R.id.pic);
             title   = (TextView) view.findViewById(R.id.title);
             price   = (TextView) view.findViewById(R.id.price);
-
+            cardView= (CardView) view.findViewById(R.id.card);
         }
 
         @Override

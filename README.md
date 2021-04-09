@@ -37,14 +37,16 @@ Ao selecionar um quadrinho, uma chamada para uma nova Activity é feita pelo apl
 ### 4. Checkout
 <img src="screens/checkout.jpg" alt="Checkout Screen" width="20%"/>
 Ao selecionar o quadrinho para comprar, o usuário pode alterar as quantidades, apagar um produto da lista (se ele apagar todos os quadrinhos o aplicativo volta para a tela home para que o usuário escolha novos produtos) e até mesmo inserir cupons. Os cupons podem ser Raros (que dão 25% de desconto no valor da compra) ou Comuns (que dão 10% de desconto no valor total da compra). Para testar basta usar:
-###### Cupons Raros
-* CUPOMABCD
-* CUPOMDEFG
-* CUPOMDHIJ
-###### Cupons Comuns
+
+#### Cupons Raros
+- CUPOMABCD
+- CUPOMDEFG
+- CUPOMDHIJ
+#### Cupons Comuns
 * CUPOMKLM
 * CUPOMNOP
 * CUPOMQRS
+
 Note que, caso o usuário escolher voltar para a tela anterior para escolher mais quadrinhos e ter registrado um cupom, o cupom permanece salvo até que o usuário finalize a compra ou que ele mesmo apague/mude o cupom.
 O desenvolvimento seguiu a arquitetura MVC.
 

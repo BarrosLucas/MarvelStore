@@ -51,4 +51,9 @@ Note que, caso o usuário escolher voltar para a tela anterior para escolher mai
 O desenvolvimento seguiu a arquitetura MVC.
 
 ## Tratamentos de Erro
-O aplicativo avisa ao usuário quando houve algum problema com a conexão no momento da requição. Caso o usuário Informe um cupom de desconto inválido o aplicativo também transmite uma mensagem. Caso o usuário queira abrir o carrinho sem ter nenhum quadrinho, uma mensagem é exibida ao usuário informando que o carrinho está vazio.
+O aplicativo avisa ao usuário quando houve algum problema com a conexão no momento da requisição. Caso o usuário Informe um cupom de desconto inválido o aplicativo também transmite uma mensagem. Caso o usuário queira abrir o carrinho sem ter nenhum quadrinho, uma mensagem é exibida ao usuário informando que o carrinho está vazio.
+
+## Edições Raras
+Como a chamada é feita por página, não é possível sortear de antemão quem será raro e quem não será para garantir que 12% seja arbitrariamente escolhido como raro. Desta forma, seguindo uma lógica matemática, chega-se a conclusão de que se cada página for sorteada para que 12% dela seja rara, o somatório dos 12% de todas as páginas gerará em 12% do total das edições, mantendo a arbitrariedade.<br>
+As edições raras são tarjadas com um "selo":
+<img src="screens/splashscreen.jpeg" alt="Splash Screen" width="20%"/>

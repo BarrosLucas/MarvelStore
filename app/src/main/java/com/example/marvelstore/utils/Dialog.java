@@ -20,7 +20,7 @@ public class Dialog {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                HomeActivity.rareComics = new ArrayList<>();
+                HomeActivity.comics = new ArrayList<>();
                 HomeActivity.coupon = null;
                 cartActivity.finish();
             }

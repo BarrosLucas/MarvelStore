@@ -89,7 +89,9 @@ public class CartController {
         apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                HomeActivity.coupon = editText.getText().toString();
                 if(verifyDiscount()==0){
+                    HomeActivity.coupon = null;
                     Dialog.showAlertDialog(context,"Invalid Coupon","Check your coupon");
                 }else{
                     HomeActivity.coupon = editText.getText().toString();

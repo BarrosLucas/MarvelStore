@@ -5,9 +5,9 @@ Uma apliação que usa a API da Marvel.
 
 ## A API:
 ### 1. Pegue uma Chave Pública e uma Privada
-Para fazer isso basta acessar o site https://developer.marvel.com, onde é possível criar sua conta e facilmente possuir o acesso a chave. No site também é possível ter acesso à documentação da API, bem como a um simulador que simula todas as chamadas da API.
+Para fazer isso basta acessar o site https://developer.marvel.com, onde é possível criar sua conta e facilmente possuir o acesso a chave. No site também é possível ter acesso à documentação da API, bem como a um simulador capaz de simular todas as chamadas da API.
 
-### 2. Utilzando as chaves no código
+### 2. Utilizando as chaves no código
 Para fazer as requisições com a API é necessário que se tenha as duas chaves (pública e privada) bem como é importante ter o timestamp no momento em que a requisição for realizada. Desta forma, para realizar uma requisição:
 ```
 'https://gateway.marvel.com/v1/public/' + rota (no caso 'comics/') + '?ts=VALORDATIMESTAMP&apikey=PUBLICKEY&hash=HASH'

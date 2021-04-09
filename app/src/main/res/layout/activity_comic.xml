@@ -22,8 +22,7 @@
                     android:id="@+id/thumb"
                     android:layout_width="0dp"
                     android:layout_height="200dp"
-                    android:layout_weight="2"
-                    android:src="@drawable/ilustracao_retrato"/>
+                    android:layout_weight="2" />
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="200dp"

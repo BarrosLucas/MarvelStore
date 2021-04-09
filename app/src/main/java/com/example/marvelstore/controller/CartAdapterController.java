@@ -26,7 +26,7 @@ public class CartAdapterController {
         holder.title.setText(holder.mItem.getTitle());
         setAmount(holder.mItem.getAmount(),position,cartController);
 
-        holder.less.setVisibility(View.INVISIBLE);
+        controllButtons(position);
 
 
         holder.less.setOnClickListener(new View.OnClickListener() {

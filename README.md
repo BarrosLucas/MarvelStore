@@ -22,20 +22,20 @@ Os quadrinhos foram dispostos em páginas. Sendo assim, o usuário pode navegar 
 Dado um pequeno resumo, cabe uma análise de cada tela.
 
 ### 1. SplashScreen
-<img src="screens/splashscreen.jpeg" alt="Splash Screen" width="20%"/>
+<img src="assets/splashscreen.jpeg" alt="Splash Screen" width="20%"/>
 A tela, além de mostrar a logomarca da Marvel, inicia o carregamento dos quadrinhos.
 
 ### 2. Home
-<img src="screens/home.jpg" alt="Home Screen" width="20%"/>
+<img src="assets/home.jpg" alt="Home Screen" width="20%"/>
 A home mostra os quadrinhos dispostos em páginas. Cada página possui 48 quadrinhos, um número escolhido por "tentativa e erro" para buscar achar o número mais confortável em relação à experiência do usuário. 
 Com a possibilidade de avançar muitas páginas, há também a opção de que, caso seja do gosto do usuário, ir até a última página ou, se já estiver distante do início, voltar até a primeira página.
 
 ### 3. Descrição do Quadrinho
-<img src="screens/description.jpg" alt="Comics Description Screen" width="20%"/>
+<img src="assets/description.jpg" alt="Comics Description Screen" width="20%"/>
 Ao selecionar um quadrinho, uma chamada para uma nova Activity é feita pelo aplicativo, enviando para a nova activity as informações do quadrinho selecionado.
 
 ### 4. Checkout
-<img src="screens/checkout.jpg" alt="Checkout Screen" width="20%"/>
+<img src="assets/checkout.jpg" alt="Checkout Screen" width="20%"/>
 Ao selecionar o quadrinho para comprar, o usuário pode alterar as quantidades, apagar um produto da lista (se ele apagar todos os quadrinhos o aplicativo volta para a tela home para que o usuário escolha novos produtos) e até mesmo inserir cupons. Os cupons podem ser Raros (que dão 25% de desconto no valor da compra) ou Comuns (que dão 10% de desconto no valor total da compra). Para testar basta usar:
 
 #### Cupons Raros
@@ -54,6 +54,8 @@ O desenvolvimento seguiu a arquitetura MVC.
 O aplicativo avisa ao usuário quando houve algum problema com a conexão no momento da requisição. Caso o usuário Informe um cupom de desconto inválido o aplicativo também transmite uma mensagem. Caso o usuário queira abrir o carrinho sem ter nenhum quadrinho, uma mensagem é exibida ao usuário informando que o carrinho está vazio.
 
 ## Edições Raras
-Como a chamada é feita por página, não é possível sortear de antemão quem será raro e quem não será para garantir que 12% seja arbitrariamente escolhido como raro. Desta forma, seguindo uma lógica matemática, chega-se a conclusão de que se cada página for sorteada para que 12% dela seja rara, o somatório dos 12% de todas as páginas gerará em 12% do total das edições, mantendo a arbitrariedade.<br>
-As edições raras são tarjadas com um "selo":
-<img src="screens/splashscreen.jpeg" alt="Splash Screen" width="20%"/>
+Como a chamada é feita por página, não é possível sortear de antemão quais quadrinhos serão raros para garantir que 12% seja arbitrariamente selecionado. Desta forma, seguindo uma lógica matemática, chega-se a conclusão de que se cada página for sorteada para que 12% dela seja rara, o somatório dos 12% de todas as páginas gerará em 12% do total das edições, mantendo a arbitrariedade.<br>
+As edições raras são tarjadas com um "selo" no aplicativo e assim é possível o usuário identificar facilmente, além de que na tela de descrição de um quadrinho, caso ele seja raro esse selo é exposto na tela:<br>
+<img src="assets/coin.png" alt="Selo de Raridade" width="5%"/>
+
+

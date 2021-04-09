@@ -30,6 +30,7 @@ public class ComicController {
     private ComicActivity comicActivity;
     private int position;
 
+
     public ComicController(ImageView thumb,TextView title,TextView price,Button cart,TextView about,Comic comic,LinearLayout rare,int position,Context context,ComicActivity comicActivity){
         this.thumb = thumb;
         this.title = title;
@@ -46,6 +47,7 @@ public class ComicController {
         setFunctions();
     }
 
+    /*"Alimenta" os atributos da activity*/
     private void populateView(){
         String url = comic.getThumbnail().getPath()+"/portrait_medium."+comic.getThumbnail().getExtension();
         url = url.replace("http://","https://");
@@ -55,6 +57,7 @@ public class ComicController {
         price.setText("USD "+ Pratice.converterDoubleString(comic.getPrices().get(0).getPrice()));
         about.setText(comic.getDescription());
 
+        /*Mostra a frase de que o quadrinho é raro somente se ele realmente for raro*/
         if(RareComics.isRare(position)){
             rare.setVisibility(View.VISIBLE);
         }else{
@@ -63,23 +66,21 @@ public class ComicController {
 
     }
 
+    /*Define a função para quando o usuário clicar em adicionar produto ao carrinho*/
     private void setFunctions(){
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if(!alreadyExistsThisComic(comic)){
+            public void onClick(View view) { /*Se o quadrinho ainda não estiver no carrinho, ele é*/
+                if(!alreadyExistsThisComic(comic)){  /*criado e adicionado ao carrinho*/
                     String url = comic.getThumbnail().getPath()+"/portrait_medium."+comic.getThumbnail().getExtension();
                     url = url.replace("http://","https://");
                     ComicToCart c = new ComicToCart(comic.getTitle(),comic.getPrices().get(0).getPrice(),url,1,comic.getId());
                     HomeActivity.comics.add(c);
 
-
-                    Log.i("HomeActivityComics","Is null? "+(HomeActivity.comics==null));
-
                     Intent intent = new Intent(context, CartActivity.class);
                     context.startActivity(intent);
                     comicActivity.finish();
-                }else{
+                }else{ /*Se o quadrinho já estiver no carrinho, a tela do checkout é aberta*/
                     Intent intent = new Intent(context, CartActivity.class);
                     context.startActivity(intent);
                     comicActivity.finish();

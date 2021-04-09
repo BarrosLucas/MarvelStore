@@ -37,9 +37,8 @@ public class HomeController {
     LinearLayout fragment;
     LinearLayout progress;
 
-
+    /*Controla a página atual e o offset*/
     private int currentPage;
-
     private int offset;
 
     private Context context;
@@ -56,9 +55,11 @@ public class HomeController {
         this.fragment = fragment;
         this.progress = progress;
 
+        /*A página e o offset começam com 0*/
         currentPage = 0;
         offset = 0;
 
+        /*Carrega os primeiros quadrinhos raros*/
         RareComics.generateRareComics();
 
         showMenuButtons();
@@ -66,7 +67,11 @@ public class HomeController {
     }
 
 
+    /*Mostra os botões*/
     public void showMenuButtons(){
+        /*Quando é a primeira página, os botoes de voltar e primeira página são ocultados,
+         *e a primeira página apresenta a coloração escura, bem como os botões serão 1, 2 e 3
+         * obrigatoriamente.*/
         if(currentPage == 0){
             firstPage.setVisibility(View.INVISIBLE);
             buttonBack.setVisibility(View.INVISIBLE);
@@ -83,12 +88,12 @@ public class HomeController {
             first.setText("1");
             second.setText("2");
             thirty.setText("3");
-        }else if(currentPage > 0 && currentPage < (getAmountPage()-1)){
-            firstPage.setVisibility(View.VISIBLE);
-            buttonBack.setVisibility(View.VISIBLE);
-            first.setVisibility(View.VISIBLE);
-            second.setVisibility(View.VISIBLE);
-            thirty.setVisibility(View.VISIBLE);
+        }else if(currentPage > 0 && currentPage < (getAmountPage()-1)){ //Quando está entre a
+            firstPage.setVisibility(View.VISIBLE); //primeira e a última, o botão do meio fica
+            buttonBack.setVisibility(View.VISIBLE);//escuro e os demais ficam claros. As setas
+            first.setVisibility(View.VISIBLE);     //da esquerada e da direitas ficam visíveis
+            second.setVisibility(View.VISIBLE);    //e o controle do número da página é baseado
+            thirty.setVisibility(View.VISIBLE);    //na página atual
             buttonForward.setVisibility(View.VISIBLE);
             lastPage.setVisibility(View.VISIBLE);
 
@@ -99,10 +104,10 @@ public class HomeController {
             first.setText(currentPage+"");
             second.setText((currentPage+1)+"");
             thirty.setText((currentPage+2)+"");
-        }else if(currentPage == (getAmountPage()-1)){
-            firstPage.setVisibility(View.VISIBLE);
-            buttonBack.setVisibility(View.VISIBLE);
-            first.setVisibility(View.VISIBLE);
+        }else if(currentPage == (getAmountPage()-1)){ //Quando é chegada a última página, o último
+            firstPage.setVisibility(View.VISIBLE); //botão fica escuro, as setas da direita ficam
+            buttonBack.setVisibility(View.VISIBLE);//invisíveis e a numeração das páginas segue
+            first.setVisibility(View.VISIBLE);     //conforme o valor da página atual
             second.setVisibility(View.VISIBLE);
             thirty.setVisibility(View.VISIBLE);
             buttonForward.setVisibility(View.INVISIBLE);
@@ -119,42 +124,55 @@ public class HomeController {
     }
 
     public void setButtonsFunctions(){
+        /*Vai para a primeira página independentemente da página que estiver*/
         firstPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setCurrentPage(0);
             }
         });
+
+        /*Vai para a última página independentemente da página que estiver*/
         lastPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setCurrentPage(getAmountPage()-1);
             }
         });
+
+        /*Volta uma página em relação a página atual (não fica visível quando a página atual é 1)*/
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setCurrentPage(currentPage-1);
             }
         });
+
+        /*Avança uma página em relação a página atual (não fica visível quando chega na última página)*/
         buttonForward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setCurrentPage(currentPage+1);
             }
         });
+
+        /*Vai para a página indicada no primeiro botao*/
         first.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setCurrentPage(Integer.parseInt(first.getText().toString()) - 1);
             }
         });
+
+        /*Vai para a página indicada no segundo botão*/
         second.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setCurrentPage(Integer.parseInt(second.getText().toString()) - 1);
             }
         });
+
+        /*Vai para a página indicada no terceiro botão*/
         thirty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -163,6 +181,7 @@ public class HomeController {
         });
     }
 
+    /*Atualiza o valor da página mantendo o controle e carregando as novas páginas*/
     public void setCurrentPage(int currentPage){
         this.currentPage = currentPage;
 
@@ -204,16 +223,19 @@ public class HomeController {
         });
     }
 
+    /*Calcula o total de páginas*/
     public int getAmountPage(){
         int total = HomeActivity.returnBody.getData().getTotal();
         return (total%48==0)?(total/48):((total/48)+1);
     }
 
+    /*Emite o progressbar para indicar que a página está carregando uma informação*/
     public void loading(){
         fragment.setVisibility(View.GONE);
         progress.setVisibility(View.VISIBLE);
     }
 
+    /*Omite o progressbar para mostrar a informação que foi carregada*/
     public void finishLoad(){
         fragment.setVisibility(View.VISIBLE);
         progress.setVisibility(View.GONE);

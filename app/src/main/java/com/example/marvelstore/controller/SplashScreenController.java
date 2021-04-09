@@ -34,6 +34,7 @@ public class SplashScreenController{
     SplashScreenActivity activity;
     ProgressBar progressBar;
 
+    /*Após 2 segundos a página começa a carregar os quadrinhos*/
     public SplashScreenController(Context context, SplashScreenActivity activity, ProgressBar progressBar){
         this.context = context;
         this.activity = activity;
@@ -47,6 +48,7 @@ public class SplashScreenController{
         }, 2000);
     }
 
+    /*Carrega os quadrinhos e só então vai para a página home*/
     public void getComics(){
         long ts = Pratice.getTimestamp();
         String hash = Pratice.getHash(ts+"",Keys.privateApiKeyMarvel,Keys.publicApiKeyMarvel);

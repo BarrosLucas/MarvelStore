@@ -20,6 +20,8 @@ import com.google.gson.Gson;
 import java.util.List;
 
 public class CartActivity extends AppCompatActivity {
+
+    /*Atributos da view*/
     private RecyclerView recyclerView;
     private EditText editText;
     private Button apply;
@@ -48,6 +50,7 @@ public class CartActivity extends AppCompatActivity {
 
         controller = new CartController(recyclerView,editText,apply,totalPrice,removePrice,price,finish,back,this,this);
 
+        //A view assume o papel de uma lista e recebe os quadrinhos que o usuário selecionou para compra
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         CartItemViewAdapter adapter = new CartItemViewAdapter(HomeActivity.comics,controller);
 

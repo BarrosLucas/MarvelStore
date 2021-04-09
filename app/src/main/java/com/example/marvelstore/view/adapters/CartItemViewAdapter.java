@@ -21,9 +21,9 @@ import java.util.List;
 
 public class CartItemViewAdapter extends RecyclerView.Adapter<CartItemViewAdapter.ViewHolder> {
     private CartAdapterController controller;
-
     private CartController cartController;
     private List<ComicToCart> comicToCarts;
+
     public CartItemViewAdapter(List<ComicToCart> comics,CartController cartController) {
         this.cartController = cartController;
         comicToCarts = comics;
@@ -37,6 +37,7 @@ public class CartItemViewAdapter extends RecyclerView.Adapter<CartItemViewAdapte
         return new CartItemViewAdapter.ViewHolder(view);
     }
 
+    /*O controller controla as açoes da view*/
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         controller.loadiItem(holder,position,cartController,comicToCarts);
@@ -47,6 +48,8 @@ public class CartItemViewAdapter extends RecyclerView.Adapter<CartItemViewAdapte
         return HomeActivity.comics.size();
     }
 
+
+    /*Vai atuar sendo o mediante entre o adapter e o item*/
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public final View mView;

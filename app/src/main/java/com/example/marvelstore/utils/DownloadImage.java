@@ -16,6 +16,7 @@ public class DownloadImage extends AsyncTask<String, Void, Bitmap> {
         this.bmImage = bmImage;
     }
 
+    /*De forma assíncrona o AsyncTask baixa e carrega as imagens (onPostExecute) na ImageView */
     protected Bitmap doInBackground(String... urls) {
         String urldisplay = urls[0];
         Bitmap mIcon11 = null;

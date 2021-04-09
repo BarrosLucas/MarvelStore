@@ -29,13 +29,17 @@ import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private HomeController controller;
 
+    public static RecyclerView recyclerView;
+    public static ArrayList<ComicToCart> comics;
+    public static String coupon;
     public static ReturnBody returnBody;
     public static ArrayList<Integer> rareComics;
 
+    /*Constante para desserialização dos quadrinhos*/
     public static final String ARG_COMICS = "comics";
 
+    /*Atributos da view*/
     private ImageView firstPage;
     private ImageView backButton;
     private Button firstButton;
@@ -47,11 +51,7 @@ public class HomeActivity extends AppCompatActivity {
     private LinearLayout fragment;
     private LinearLayout progress;
 
-    public static RecyclerView recyclerView;
-
-    public static ArrayList<ComicToCart> comics;
-
-    public static String coupon;
+    private HomeController controller;
 
 
     @Override
@@ -59,15 +59,12 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         comics = new ArrayList<>();
+
         Gson gson = new Gson();
         String retBody = getIntent().getStringExtra(ARG_COMICS);
         returnBody = gson.fromJson(retBody,ReturnBody.class);
 
-
-
         setContentView(R.layout.activity_home);
-
-
 
         firstPage = (ImageView) findViewById(R.id.first_page);
         backButton = (ImageView) findViewById(R.id.back);
@@ -90,6 +87,9 @@ public class HomeActivity extends AppCompatActivity {
         return true;
     }
 
+
+    /*Ao clicar no carrinho o usuário é redirecionado à tela de checkout... Porém se ele não tiver
+    * nada no carrinho, uma mensagem em toast é enviada informando que não há nada no carrinho*/
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){

@@ -13,6 +13,9 @@ import com.example.marvelstore.view.HomeActivity;
 import java.util.ArrayList;
 
 public class Dialog {
+
+    /*Dialog para quando o usuário finaliza a compra. Ao finalizar, o carrinho é "zerado", o cupom
+    * que o usuário havia deixado salvo apaga que a tela volta para a HOME*/
     public static void showAlertDialogToFinishPurchase(View view, Context context, CartActivity cartActivity) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AlertDialogTheme);
         builder.setTitle("Completed Purchase");
@@ -28,6 +31,10 @@ public class Dialog {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
+    /*Para tratamento de erros em geral o Alert é acionado para alertar o usuário
+    * - Falhas na conexão
+    * - Cupom inválido*/
     public static void showAlertDialog(Context context, String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AlertDialogTheme);
         builder.setTitle(title);

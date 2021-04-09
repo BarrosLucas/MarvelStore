@@ -20,11 +20,12 @@ import com.example.marvelstore.model.ReturnBody;
 import com.google.gson.Gson;
 
 public class ComicActivity extends AppCompatActivity {
+    /*Constanes para argumentos que passam de uma activity para outra*/
     private static final String ARG_COMIC = "comic";
     private static final String ARG_POSITION = "position";
 
+    /*Elementos visuais*/
     private ImageView thumb;
-
     private TextView title;
     private TextView price;
     private Button cart;
@@ -32,7 +33,6 @@ public class ComicActivity extends AppCompatActivity {
     private LinearLayout rare;
 
     private Comic comic;
-
     private ComicController controller;
 
     @Override
@@ -47,6 +47,7 @@ public class ComicActivity extends AppCompatActivity {
         about = (TextView) findViewById(R.id.about);
         rare = (LinearLayout) findViewById(R.id.rare);
 
+        /*A activity recebe o retorno da api bem como a posição que o quadrinho ocupa no array*/
         Gson gson = new Gson();
         String retBody = getIntent().getStringExtra(ARG_COMIC);
         int position = getIntent().getIntExtra(ARG_POSITION,-1);

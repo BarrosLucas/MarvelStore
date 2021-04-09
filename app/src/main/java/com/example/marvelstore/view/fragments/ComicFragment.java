@@ -17,21 +17,13 @@ import com.example.marvelstore.view.adapters.ComicRecyclerViewAdapter;
 import com.example.marvelstore.R;
 import com.example.marvelstore.view.HomeActivity;
 
-/**
- * A fragment representing a list of Items.
- */
+
 public class ComicFragment extends Fragment {
 
-    // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
 
-    // TODO: Customize parameters
     private int mColumnCount = 3;
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
     public ComicFragment() {
     }
 
@@ -50,11 +42,12 @@ public class ComicFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            Log.i("VEIO?","Uai");
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
     }
 
+    /*Se houver apenas um elemento na lista ele ficará em formato de lista horizontal.
+    * Os dados são passados por meio do adapter para a recyclerview*/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

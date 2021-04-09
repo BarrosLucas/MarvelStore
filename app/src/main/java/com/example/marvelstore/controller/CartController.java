@@ -18,6 +18,8 @@ import com.example.marvelstore.view.HomeActivity;
 import com.example.marvelstore.view.adapters.CartItemViewAdapter;
 
 public class CartController {
+
+    /*Declaração das variáveis da classe View*/
     private RecyclerView recyclerView;
     private EditText editText;
     private Button apply;
@@ -78,7 +80,12 @@ public class CartController {
         return sum;
     }
 
+
+    /*Define as funções de cada botão*/
     private void defineFunctions(){
+
+        /*Quando o usuário quer procurar mais quadrinhos para comprar, a activity se encerra sem
+        * que nenhum dado seja perdido*/
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,6 +93,10 @@ public class CartController {
             }
         });
 
+        /*
+        * Aplica o desconto, verificando se o cupom é válido... Caso contrário uma mensagem é
+        * mostrada ao usuário
+        * */
         apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,6 +110,9 @@ public class CartController {
                 }
             }
         });
+
+        /*
+        * Encerra a compra*/
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,6 +120,9 @@ public class CartController {
             }
         });
     }
+
+    /*
+    * Atualiza a lista (é crucial quando algum item é apagado)*/
     public void refreshRecycle(){
         CartItemViewAdapter adapter = new CartItemViewAdapter(HomeActivity.comics,this);
         recyclerView.setAdapter(adapter);

@@ -8,6 +8,8 @@
     <dimen name="widthThumb">90dp</dimen>
     <dimen name="heightThumb">150dp</dimen>
 
+    <dimen name="heightCard">160dp</dimen>
+
     <dimen name="titleComicItemList">20sp</dimen>
     <dimen name="subtitleComicItemList">18sp</dimen>
 
@@ -16,4 +18,10 @@
     <dimen name="aboutContent">15sp</dimen>
 
     <dimen name="aboutMargin">10dp</dimen>
+
+    <dimen name="titlesCart">20sp</dimen>
+    <dimen name="totalCart">20sp</dimen>
+    <dimen name="totalMargin">5dp</dimen>
+    <dimen name="marginImg">3dp</dimen>
+
 </resources>

@@ -10,6 +10,9 @@
     <color name="titleDescriptionColor">#ffffff</color>
     <color name="aboutComicColor">#000000</color>
 
+    <color name="titlesCart">#ffffff</color>
+    <color name="buttonCart">#DA0000</color>
+
 
     <!--<color name="colorPrimary">#6200EE</color>-->
     <color name="colorPrimary">#222222</color>

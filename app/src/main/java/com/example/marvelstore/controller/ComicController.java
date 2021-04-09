@@ -6,12 +6,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.marvelstore.model.Comic;
 import com.example.marvelstore.model.ComicToCart;
 import com.example.marvelstore.utils.DownloadImage;
 import com.example.marvelstore.utils.Pratice;
+import com.example.marvelstore.utils.RareComics;
 import com.example.marvelstore.view.CartActivity;
 import com.example.marvelstore.view.ComicActivity;
 import com.example.marvelstore.view.HomeActivity;
@@ -23,10 +25,12 @@ public class ComicController {
     private Button cart;
     private TextView about;
     private Comic comic;
+    private LinearLayout rare;
     private Context context;
     private ComicActivity comicActivity;
+    private int position;
 
-    public ComicController(ImageView thumb,TextView title,TextView price,Button cart,TextView about,Comic comic,Context context,ComicActivity comicActivity){
+    public ComicController(ImageView thumb,TextView title,TextView price,Button cart,TextView about,Comic comic,LinearLayout rare,int position,Context context,ComicActivity comicActivity){
         this.thumb = thumb;
         this.title = title;
         this.price = price;
@@ -35,6 +39,8 @@ public class ComicController {
         this.comic = comic;
         this.context = context;
         this.comicActivity = comicActivity;
+        this.rare = rare;
+        this.position = position;
 
         populateView();
         setFunctions();
@@ -48,6 +54,12 @@ public class ComicController {
         title.setText(comic.getTitle());
         price.setText("USD "+ Pratice.converterDoubleString(comic.getPrices().get(0).getPrice()));
         about.setText(comic.getDescription());
+
+        if(RareComics.isRare(position)){
+            rare.setVisibility(View.VISIBLE);
+        }else{
+            rare.setVisibility(View.GONE);
+        }
 
     }
 

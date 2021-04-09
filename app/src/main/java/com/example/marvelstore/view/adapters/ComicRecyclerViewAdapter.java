@@ -54,6 +54,7 @@ public class ComicRecyclerViewAdapter extends RecyclerView.Adapter<ComicRecycler
         public final TextView title;
         public final TextView price;
         public final CardView cardView;
+        public final ImageView isRare;
 
         public Comic mItem;
 
@@ -65,6 +66,7 @@ public class ComicRecyclerViewAdapter extends RecyclerView.Adapter<ComicRecycler
             title   = (TextView) view.findViewById(R.id.title);
             price   = (TextView) view.findViewById(R.id.price);
             cardView= (CardView) view.findViewById(R.id.card);
+            isRare  = (ImageView) view.findViewById(R.id.is_rare);
         }
 
         @Override

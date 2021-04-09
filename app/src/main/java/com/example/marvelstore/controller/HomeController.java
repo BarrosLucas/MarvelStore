@@ -14,6 +14,7 @@ import com.example.marvelstore.model.ReturnBody;
 import com.example.marvelstore.retrofit.RetrofitInit;
 import com.example.marvelstore.utils.Keys;
 import com.example.marvelstore.utils.Pratice;
+import com.example.marvelstore.utils.RareComics;
 import com.example.marvelstore.view.HomeActivity;
 import com.example.marvelstore.view.adapters.ComicRecyclerViewAdapter;
 
@@ -57,7 +58,7 @@ public class HomeController {
         currentPage = 0;
         offset = 0;
 
-
+        RareComics.generateRareComics();
 
         showMenuButtons();
         setButtonsFunctions();
@@ -181,6 +182,7 @@ public class HomeController {
             public void onResponse(Call<ReturnBody> call, Response<ReturnBody> response) {
                 if(response.isSuccessful()){
                     HomeActivity.returnBody = response.body();
+                    RareComics.generateRareComics();
                     HomeActivity.recyclerView.setAdapter(new ComicRecyclerViewAdapter(HomeActivity.returnBody.getData().getResults()));
                     finishLoad();
                 }else{

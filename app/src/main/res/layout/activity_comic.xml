@@ -60,6 +60,29 @@
                         android:textSize="15sp"/>
                 </LinearLayout>
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_marginTop="@dimen/margin"
+                    android:layout_marginRight="@dimen/margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/titleDescriptionSize"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="@color/titleDescriptionColor"
+                    android:text="@string/thisIsRare"/>
+                <ImageView
+                    android:foregroundGravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_rare"/>
+            </LinearLayout>
+
             <TextView
                 android:layout_marginTop="@dimen/margin"
                 android:layout_width="match_parent"

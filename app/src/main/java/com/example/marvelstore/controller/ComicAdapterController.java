@@ -3,6 +3,7 @@ package com.example.marvelstore.controller;
 import android.content.Intent;
 import android.view.View;
 
+import com.example.marvelstore.utils.RareComics;
 import com.example.marvelstore.view.ComicActivity;
 import com.example.marvelstore.view.adapters.ComicRecyclerViewAdapter;
 import com.example.marvelstore.model.Comic;
@@ -15,6 +16,7 @@ import java.util.List;
 public class ComicAdapterController {
 
     private static final String ARG_COMIC = "comic";
+    private static final String ARG_POSITION = "position";
 
     public void loadiItem(List<Comic> comics, final ComicRecyclerViewAdapter.ViewHolder holder, int position){
         holder.mItem = comics.get(position);
@@ -27,6 +29,12 @@ public class ComicAdapterController {
         holder.title.setText(comics.get(position).getTitle());
         holder.price.setText("USD "+ Pratice.converterDoubleString(comics.get(position).getPrices().get(0).getPrice()));
 
+        if(RareComics.isRare(position)){
+            holder.isRare.setVisibility(View.VISIBLE);
+        }else{
+            holder.isRare.setVisibility(View.INVISIBLE);
+        }
+
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,6 +42,7 @@ public class ComicAdapterController {
 
                 Intent intent = new Intent(view.getContext(), ComicActivity.class);
                 intent.putExtra(ARG_COMIC,gson.toJson(comics.get(position)));
+                intent.putExtra(ARG_POSITION,position);
                 view.getContext().startActivity(intent);
             }
         });

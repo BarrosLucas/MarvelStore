@@ -17,9 +17,11 @@ import android.widget.LinearLayout;
 
 import com.example.marvelstore.R;
 import com.example.marvelstore.controller.HomeController;
+import com.example.marvelstore.model.Comic;
 import com.example.marvelstore.model.ComicToCart;
 import com.example.marvelstore.model.Image;
 import com.example.marvelstore.model.ReturnBody;
+import com.example.marvelstore.utils.RareComics;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -29,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
     private HomeController controller;
 
     public static ReturnBody returnBody;
+    public static ArrayList<Integer> rareComics;
 
     public static final String ARG_COMICS = "comics";
 
@@ -59,7 +62,10 @@ public class HomeActivity extends AppCompatActivity {
         String retBody = getIntent().getStringExtra(ARG_COMICS);
         returnBody = gson.fromJson(retBody,ReturnBody.class);
 
+
+
         setContentView(R.layout.activity_home);
+
 
 
         firstPage = (ImageView) findViewById(R.id.first_page);

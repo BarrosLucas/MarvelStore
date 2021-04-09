@@ -1,6 +1,6 @@
 # MarvelStore
 ##### Version 0.0.1
-
+<img src="assets/icon.png" alt="Selo de Raridade" width="5%"/>
 Uma apliação que usa a API da Marvel.
 
 ## A API:

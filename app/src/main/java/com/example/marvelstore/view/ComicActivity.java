@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.marvelstore.R;
 import com.example.marvelstore.controller.ComicController;
@@ -73,7 +74,7 @@ public class ComicActivity extends AppCompatActivity {
                     Intent intent = new Intent(this,CartActivity.class);
                     startActivity(intent);
                 }else{
-                    //Avisar que não tem nada no carrinho
+                    Toast.makeText(this,"You do not have any products in the cart.",Toast.LENGTH_SHORT).show();
                 }
 
                 return true;

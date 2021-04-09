@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.marvelstore.model.ComicToCart;
 import com.example.marvelstore.utils.Coupon;
+import com.example.marvelstore.utils.Dialog;
 import com.example.marvelstore.utils.Pratice;
 import com.example.marvelstore.view.CartActivity;
 import com.example.marvelstore.view.HomeActivity;
@@ -88,8 +89,18 @@ public class CartController {
         apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                HomeActivity.coupon = editText.getText().toString();
-                refreshValues();
+                if(verifyDiscount()==0){
+                    Dialog.showAlertDialog(context,"Invalid Coupon","Check your coupon");
+                }else{
+                    HomeActivity.coupon = editText.getText().toString();
+                    refreshValues();
+                }
+            }
+        });
+        finish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialog.showAlertDialogToFinishPurchase(view,context,cartActivity);
             }
         });
     }

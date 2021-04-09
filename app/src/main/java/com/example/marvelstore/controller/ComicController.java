@@ -79,6 +79,10 @@ public class ComicController {
                     Intent intent = new Intent(context, CartActivity.class);
                     context.startActivity(intent);
                     comicActivity.finish();
+                }else{
+                    Intent intent = new Intent(context, CartActivity.class);
+                    context.startActivity(intent);
+                    comicActivity.finish();
                 }
             }
         });

@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 
 import com.example.marvelstore.model.ReturnBody;
 import com.example.marvelstore.retrofit.RetrofitInit;
+import com.example.marvelstore.utils.Dialog;
 import com.example.marvelstore.utils.Keys;
 import com.example.marvelstore.utils.Pratice;
 import com.example.marvelstore.view.HomeActivity;
@@ -65,6 +66,7 @@ public class SplashScreenController{
                     context.startActivity(intent);
                     activity.finish();
                 }else{
+                    Dialog.showAlertDialog(context,"Something Went Wrong","Try again later");
                     Log.i("Response Error Code: ",response.code()+"");
                     Log.i("Response Error Body: ",response.message());
                 }
@@ -72,6 +74,7 @@ public class SplashScreenController{
 
             @Override
             public void onFailure(Call<ReturnBody> call, Throwable t) {
+                Dialog.showAlertDialog(context,"Connection Fail","Check your internet connection");
                 Log.i("Request","Fail");
                 Log.i("Request",t.getMessage());
                 Log.i("Request",t.getLocalizedMessage());

@@ -12,6 +12,7 @@ import androidx.core.content.res.ResourcesCompat;
 import com.example.marvelstore.R;
 import com.example.marvelstore.model.ReturnBody;
 import com.example.marvelstore.retrofit.RetrofitInit;
+import com.example.marvelstore.utils.Dialog;
 import com.example.marvelstore.utils.Keys;
 import com.example.marvelstore.utils.Pratice;
 import com.example.marvelstore.utils.RareComics;
@@ -186,6 +187,7 @@ public class HomeController {
                     HomeActivity.recyclerView.setAdapter(new ComicRecyclerViewAdapter(HomeActivity.returnBody.getData().getResults()));
                     finishLoad();
                 }else{
+                    Dialog.showAlertDialog(context,"Something Went Wrong","Try again later");
                     Log.i("Response Error Code: ",response.code()+"");
                     Log.i("Response Error Body: ",response.message());
                 }
@@ -193,6 +195,7 @@ public class HomeController {
 
             @Override
             public void onFailure(Call<ReturnBody> call, Throwable t) {
+                Dialog.showAlertDialog(context,"Connection Fail","Check your internet connection");
                 Log.i("Request","Fail");
                 Log.i("Request",t.getMessage());
                 Log.i("Request",t.getLocalizedMessage());

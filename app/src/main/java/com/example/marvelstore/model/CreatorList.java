@@ -1,0 +1,54 @@
+package com.example.marvelstore.model;
+
+import java.util.List;
+
+public class CreatorList {
+
+    private int available;
+    private int returned;
+    private String collectionURI;
+    private List<CreatorSummary> items;
+
+    public CreatorList(int available, int returned, String collectionURI, List<CreatorSummary> items) {
+        this.available = available;
+        this.returned = returned;
+        this.collectionURI = collectionURI;
+        this.items = items;
+    }
+
+    public CreatorList() {
+
+    }
+
+    public int getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(int available) {
+        this.available = available;
+    }
+
+    public int getReturned() {
+        return returned;
+    }
+
+    public void setReturned(int returned) {
+        this.returned = returned;
+    }
+
+    public String getCollectionURI() {
+        return collectionURI;
+    }
+
+    public void setCollectionURI(String collectionURI) {
+        this.collectionURI = collectionURI;
+    }
+
+    public List<CreatorSummary> getItems() {
+        return items;
+    }
+
+    public void setItems(List<CreatorSummary> items) {
+        this.items = items;
+    }
+}

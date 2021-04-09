@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_button">30dp</dimen>
+    <dimen name="padding_menu_buttons">10dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="margin">16dp</dimen>
+    <dimen name="marginRare">8dp</dimen>
+
+    <dimen name="widthThumb">90dp</dimen>
+    <dimen name="heightThumb">150dp</dimen>
+
+    <dimen name="heightCard">160dp</dimen>
+
+    <dimen name="titleComicItemList">20sp</dimen>
+    <dimen name="subtitleComicItemList">18sp</dimen>
+
+    <dimen name="titleDescriptionSize">30sp</dimen>
+    <dimen name="priceDescriptionSize">18sp</dimen>
+    <dimen name="aboutContent">15sp</dimen>
+
+    <dimen name="aboutMargin">10dp</dimen>
+
+    <dimen name="titlesCart">20sp</dimen>
+    <dimen name="totalCart">20sp</dimen>
+    <dimen name="totalMargin">5dp</dimen>
+    <dimen name="marginImg">3dp</dimen>
+
+</resources>
